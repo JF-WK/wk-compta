@@ -120,8 +120,9 @@ def main():
     else:
         print("(aucune date valide)")
 
-    print(f"💾 Réécriture du LRI master avec onglets mensuels (Global + Mois AA) : {LRI}")
-    with pd.ExcelWriter(LRI, engine="xlsxwriter") as writer:
+    print(f"💾 Réécriture du LRI master avec onglets mensuels (Global + Mois AA) : {OUT_LRI}")
+OUT_LRI.parent.mkdir(parents=True, exist_ok=True)
+with pd.ExcelWriter(OUT_LRI, engine="xlsxwriter") as writer:
         # Onglet Global = toutes les lignes, sans colonnes techniques
         df_global = df_valid.drop(columns=["_date_arr", "__year__", "__month__"], errors="ignore")
         df_global.to_excel(writer, sheet_name="Global", index=False)
