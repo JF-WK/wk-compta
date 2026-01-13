@@ -1,8 +1,9 @@
 from pathlib import Path
 import pandas as pd
 
-# Fichier MASTER (unique)
-LRI = Path("data_in/fichiers_sources/LRI jeremy enrichi.xlsx")
+# Input / Output
+IN_LRI = Path("data_in/fichiers_sources/LRI jeremy enrichi.xlsx")
+OUT_LRI = Path("output/LRI/LRI jeremy enrichi - master.xlsx")
 
 # Noms des mois
 mois_noms = {
