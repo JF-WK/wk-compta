@@ -99,7 +99,7 @@ def format_sheet(writer, sheet_name: str, df_sheet: pd.DataFrame) -> None:
 def main():
     print(f"📥 Lecture LRI master pour format mensuel : {IN_LRI}")
     if not IN_LRI.exists():
-    raise SystemExit(f"⛔ Fichier introuvable : {IN_LRI}")
+        raise SystemExit(f"⛔ Fichier introuvable : {IN_LRI}")
 
     df = pd.read_excel(IN_LRI, sheet_name=0)
 
