@@ -97,11 +97,11 @@ def format_sheet(writer, sheet_name: str, df_sheet: pd.DataFrame) -> None:
             worksheet.set_column(idx, idx, None, num_fmt)
 
 def main():
-    print(f"📥 Lecture LRI master pour format mensuel IN-PLACE : {LRI}")
-    if not LRI.exists():
-        raise SystemExit(f"⛔ Fichier introuvable : {LRI}")
+    print(f"📥 Lecture LRI master pour format mensuel : {IN_LRI}")
+    if not IN_LRI.exists():
+    raise SystemExit(f"⛔ Fichier introuvable : {IN_LRI}")
 
-    df = pd.read_excel(LRI, sheet_name=0)
+    df = pd.read_excel(IN_LRI, sheet_name=0)
 
     if "Arrivée" not in df.columns:
         raise SystemExit("⛔ Colonne 'Arrivée' absente, impossible de générer les onglets mensuels.")
